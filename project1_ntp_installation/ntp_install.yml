@@ -1,0 +1,14 @@
+---                                             	# Tells you that the whole file is YAML formatted
+- hosts: all                                    	# Tells Ansible to which hosts playbook applies
+  become: yes						# Run all commands as a sudo user
+  tasks: 						# List all the tasks to be performed	
+  - name: Install NTP					# Name of the task
+    yum: name=ntp state=present				# Operation to be performed
+  - name: Bring up the NTP service			# Name of the second task
+    service: name=ntpd state=started enabled=yes	# Operation to be performed for second task
+
+							#########################################################
+							# For dry run, use following command:
+							# ansible-playbook <playbook name> --check --> This will check 
+							# what changes will be made, without actually making them.
+							#########################################################
