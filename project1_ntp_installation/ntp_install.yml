@@ -6,11 +6,9 @@
     yum: name=ntp state=present				# Operation to be performed
   - name: Bring up the NTP service			# Name of the second task
     service: name=ntpd state=started enabled=yes	# Operation to be performed for second task
-
-							#########################################################
-							# For dry run, use following command:
-							# ansible-playbook <playbook name> --check --> This will check 
-							# what changes will be made, without actually making them.
-							#########################################################
-
+#########################################################
+# For dry run, use following command:
+# ansible-playbook <playbook name> --check --> This will check 
+# what changes will be made, without actually making them.
+#########################################################
 #
